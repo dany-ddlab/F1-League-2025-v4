@@ -1,0 +1,17 @@
+[
+  {
+    "nome": "Scuderia Ferrari",
+    "colore": "#e8002b",
+    "logo": "ferrari.png"
+  },
+  {
+    "nome": "Haas",
+    "colore": "#b6babd",
+    "logo": "haas.png"
+  },
+  {
+    "nome": "Alpine",
+    "colore": "#0090ff",
+    "logo": "alpine.png"
+  }
+]
