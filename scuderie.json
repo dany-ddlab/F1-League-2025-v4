@@ -13,5 +13,11 @@
     "nome": "Alpine",
     "colore": "#0090ff",
     "logo": "alpine.png"
+  },
+  {
+    "nome": "Sauber",
+    "colore": "#90EE90",
+    "logo": "Sauber.png"
   }
 ]
+
