@@ -1,50 +1,115 @@
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+/* ---------------------- */
+/*   TEMA SCURO/CHIARO    */
+/* ---------------------- */
+
+body.dark {
   background: #05060a;
   color: #f5f5f5;
 }
+
+body.light {
+  background: #f0f0f0;
+  color: #111;
+}
+
+/* ---------------------- */
+/* HEADER + TOGGLE TEMA   */
+/* ---------------------- */
 
 .header {
   text-align: center;
   padding: 25px 10px;
   background: linear-gradient(90deg, #e10600, #111);
   color: white;
+  position: relative;
 }
+
+#theme-toggle {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+#theme-toggle:hover {
+  background: #e10600;
+}
+
+/* ---------------------- */
+/* TABELLA F1 STYLE       */
+/* ---------------------- */
 
 .classifica {
   width: 100%;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 25px auto;
   border-collapse: collapse;
   background: #11141b;
   border-radius: 12px;
   overflow: hidden;
-  font-size: 18px; /* PIÙ GRANDE */
+  font-size: 18px;
+  position: relative;
 }
 
+/* Bordo neon rosso */
+.neon-border {
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+  border: 2px solid #ff0000;
+}
+
+/* Header tabella */
 .classifica thead {
   background: #181b24;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
+/* Celle */
 .classifica th,
 .classifica td {
-  padding: 16px; /* PIÙ SPAZIO */
+  padding: 16px;
   text-align: left;
 }
 
+/* Righe alternate */
 .classifica tbody tr:nth-child(even) {
   background: #151823;
 }
 
+/* ---------------------- */
+/* RIGHE ANIMATE F1 TV    */
+/* ---------------------- */
+
+.classifica tbody tr {
+  transition: 0.25s ease;
+}
+
+.classifica tbody tr:hover {
+  background: #e10600 !important;
+  transform: scale(1.01);
+  box-shadow: 0 0 12px #e10600;
+}
+
+/* ---------------------- */
+/* LOGHI SCUDERIE         */
+/* ---------------------- */
+
 .logo-scuderia {
-  width: 32px;   /* PIÙ GRANDE */
+  width: 32px;
   height: 32px;
   object-fit: contain;
   vertical-align: middle;
   margin-right: 10px;
 }
 
+/* Badge scuderia */
 .badge-scuderia {
   display: inline-block;
   padding: 5px 12px;
@@ -53,6 +118,7 @@ body {
   color: #fff;
 }
 
+/* Trend */
 .trend-up {
   color: #00ff7f;
   font-size: 22px;
@@ -68,7 +134,10 @@ body {
   font-size: 22px;
 }
 
-/* 📱 VERSIONE MOBILE */
+/* ---------------------- */
+/* RESPONSIVE MOBILE      */
+/* ---------------------- */
+
 @media (max-width: 600px) {
   .classifica {
     font-size: 16px;
