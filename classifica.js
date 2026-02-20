@@ -21,54 +21,41 @@ async function caricaDati() {
   piloti.forEach((pilota, index) => {
     const tr = document.createElement('tr');
 
-    const tdPos = document.createElement('td');
-    tdPos.textContent = index + 1;
-
-    const tdNick = document.createElement('td');
-    tdNick.textContent = pilota.nickname;
-
-    const tdNum = document.createElement('td');
-    tdNum.textContent = pilota.numero;
-
-    const tdScuderia = document.createElement('td');
-
-    const imgLogo = document.createElement('img');
-    imgLogo.src = loghiScuderie[pilota.scuderia];
-    imgLogo.alt = pilota.scuderia;
-    imgLogo.className = 'logo-scuderia';
-
-    const spanScuderia = document.createElement('span');
-    spanScuderia.textContent = pilota.scuderia;
-    spanScuderia.className = 'badge-scuderia';
-    spanScuderia.style.backgroundColor = coloriScuderie[pilota.scuderia];
-
-    tdScuderia.appendChild(imgLogo);
-    tdScuderia.appendChild(spanScuderia);
-
-    const tdPunti = document.createElement('td');
-    tdPunti.textContent = pilota.punti;
-
-    const tdTrend = document.createElement('td');
-    if (pilota.trend === 'up') {
-      tdTrend.textContent = '▲';
-      tdTrend.className = 'trend-up';
-    } else if (pilota.trend === 'down') {
-      tdTrend.textContent = '▼';
-      tdTrend.className = 'trend-down';
-    } else {
-      tdTrend.textContent = '■';
-      tdTrend.className = 'trend-same';
-    }
-
-    tr.appendChild(tdPos);
-    tr.appendChild(tdNick);
-    tr.appendChild(tdNum);
-    tr.appendChild(tdScuderia);
-    tr.appendChild(tdPunti);
-    tr.appendChild(tdTrend);
+    tr.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${pilota.nickname}</td>
+      <td>${pilota.numero}</td>
+      <td>
+        <img src="${loghiScuderie[pilota.scuderia]}" class="logo-scuderia">
+        <span class="badge-scuderia" style="background:${coloriScuderie[pilota.scuderia]}">
+          ${pilota.scuderia}
+        </span>
+      </td>
+      <td>${pilota.punti}</td>
+      <td class="${
+        pilota.trend === 'up' ? 'trend-up' :
+        pilota.trend === 'down' ? 'trend-down' :
+        'trend-same'
+      }">
+        ${
+          pilota.trend === 'up' ? '▲' :
+          pilota.trend === 'down' ? '▼' :
+          '■'
+        }
+      </td>
+    `;
 
     tbody.appendChild(tr);
   });
 }
 
 caricaDati();
+
+/* ---------------------- */
+/* TOGGLE TEMA            */
+/* ---------------------- */
+
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
+});
