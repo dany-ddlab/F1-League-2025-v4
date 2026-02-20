@@ -31,7 +31,7 @@ async function caricaDati() {
           ${pilota.scuderia}
         </span>
       </td>
-      <td>${pilota.punti}</td>
+      <td class="punti punti-anim">${pilota.punti}</td>
       <td class="${
         pilota.trend === 'up' ? 'trend-up' :
         pilota.trend === 'down' ? 'trend-down' :
@@ -49,6 +49,7 @@ async function caricaDati() {
   });
 }
 
+/* Carica dati */
 caricaDati();
 
 /* ---------------------- */
