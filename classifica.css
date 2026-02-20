@@ -32,9 +32,13 @@ body.light {
 }
 
 .logo-f1 {
-  width: 120px;
-  margin-bottom: 10px;
+  width: 140px;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 6px #000);
+  margin-bottom: 5px;
+  mix-blend-mode: screen; /* MAGIA: si fonde col rosso */
 }
+
 
 /* Toggle tema */
 #theme-toggle {
@@ -194,3 +198,4 @@ body.light {
     padding: 12px;
   }
 }
+
